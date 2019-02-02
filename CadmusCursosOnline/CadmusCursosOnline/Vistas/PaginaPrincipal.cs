@@ -18,6 +18,7 @@ namespace CadmusCursosOnline
         public principalPage()
         {
             InitializeComponent();
+            
 
             
         }
@@ -70,5 +71,14 @@ namespace CadmusCursosOnline
 
         }
 
+        private void tablaCursos2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void teach_Click(object sender, EventArgs e)
+        {
+            cargarTablas.cargarCursoProf();
+        }
     }
 }
