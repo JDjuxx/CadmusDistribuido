@@ -13,10 +13,33 @@ namespace CadmusCursosOnline
       
         
         
-        public void cargarCursoProf(DataGridView tabla)
+        public void cargarCursoProf(DataGridView tabla, int direccion)
         {
-            String[] values = new String[4]; 
-            string cadena = "SELECT * FROM Curso01";
+            string cadena = "SELECT * FROM Curso WHERE idDireccion = '"+direccion+"'";
+            SqlCommand cmd = new SqlCommand();
+            Conexion conection = new Conexion();
+            cmd.Connection = conection.IniciarConexion();
+            cmd.CommandText = cadena;    
+            cmd.ExecuteNonQuery();
+            try
+            {
+                SqlDataReader leer = cmd.ExecuteReader();
+                while(leer.Read())
+                {
+                    tabla.Rows.Add(leer["idCurso"].ToString(), leer["Nombre"].ToString(), leer["HORAS"].ToString(), leer["Costo"].ToString());
+                }
+                leer.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conection.CerrarConexion();
+        }
+
+        public Boolean validarProfesor(int id)
+        {
+            string cadena = "SELECT FormacionAcademica FROM Miembro WHERE idMiembro = '"+ id + "'";
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();
@@ -27,21 +50,30 @@ namespace CadmusCursosOnline
                 SqlDataReader leer = cmd.ExecuteReader();
                 if (leer.Read())
                 {
-                    values[0] = leer["idCurso"].ToString();
-                    values[1] = leer["Nombre"].ToString();
-                    values[2] = leer["Costo"].ToString();
-                    values[3] = leer["HORAS"].ToString();
-                    leer.Close();
+                    if (leer["FormacionAcademica"].Equals("Phd"))
+                    {
+                        conection.CerrarConexion();
+                        return true;
+                    }
                 }
-                
-
+                leer.Close();
             }
             catch (SqlException e)
             {
                 MessageBox.Show(e.Message);
             }
+            conection.CerrarConexion();
+            return false;
+        }
 
-
+        public void ingresarProfesor(int idM, int idC, int idD)
+        {
+            string cadena = "EXEC dbo.insertImparte @dir = "+idD+", @id = "+idM+", @ic = "+idC+", @pag = 23.45";
+            SqlCommand cmd = new SqlCommand();
+            Conexion conection = new Conexion();
+            cmd.Connection = conection.IniciarConexion();
+            cmd.CommandText = cadena;
+            cmd.ExecuteNonQuery();
         }
     }
 }

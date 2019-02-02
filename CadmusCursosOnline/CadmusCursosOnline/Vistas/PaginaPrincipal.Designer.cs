@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principalPage));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.inicio = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inscription = new System.Windows.Forms.TabPage();
             this.choose = new System.Windows.Forms.Button();
             this.tablaCursos1 = new System.Windows.Forms.DataGridView();
@@ -54,20 +52,10 @@
             this.myCurses = new System.Windows.Forms.TabPage();
             this.retirarse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.myAccount = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idCur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cursoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formAcad = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.nac = new System.Windows.Forms.Label();
@@ -84,17 +72,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
             this.cambiarCuenta = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
             this.usern = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.inicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.inscription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCursos1)).BeginInit();
             this.teach.SuspendLayout();
@@ -102,7 +92,8 @@
             this.myCurses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.myAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -130,25 +121,6 @@
             this.inicio.Text = "Inicio";
             this.inicio.UseVisualStyleBackColor = true;
             this.inicio.Click += new System.EventHandler(this.inicio_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CadmusCursosOnline.Properties.Resources.promoción;
-            this.pictureBox2.Location = new System.Drawing.Point(91, 379);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(616, 97);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CadmusCursosOnline.Properties.Resources.logoFrase;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(616, 336);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // inscription
             // 
@@ -358,38 +330,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
             this.nota});
             this.dataGridView1.Location = new System.Drawing.Point(18, 90);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(349, 226);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID Curso";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Categoría";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Horas";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // nota
-            // 
-            this.nota.HeaderText = "Nota";
-            this.nota.Name = "nota";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button2
             // 
@@ -421,7 +367,6 @@
             // 
             // myAccount
             // 
-            this.myAccount.Controls.Add(this.dataGridView2);
             this.myAccount.Controls.Add(this.formAcad);
             this.myAccount.Controls.Add(this.label18);
             this.myAccount.Controls.Add(this.nac);
@@ -438,7 +383,6 @@
             this.myAccount.Controls.Add(this.label6);
             this.myAccount.Controls.Add(this.delete);
             this.myAccount.Controls.Add(this.cambiarCuenta);
-            this.myAccount.Controls.Add(this.label5);
             this.myAccount.Controls.Add(this.usern);
             this.myAccount.Controls.Add(this.label4);
             this.myAccount.Location = new System.Drawing.Point(4, 22);
@@ -447,39 +391,6 @@
             this.myAccount.TabIndex = 4;
             this.myAccount.Text = "Mi Cuenta";
             this.myAccount.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCur,
-            this.cursoName,
-            this.cat,
-            this.note});
-            this.dataGridView2.Location = new System.Drawing.Point(13, 235);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(444, 150);
-            this.dataGridView2.TabIndex = 49;
-            // 
-            // idCur
-            // 
-            this.idCur.HeaderText = "ID Curso";
-            this.idCur.Name = "idCur";
-            // 
-            // cursoName
-            // 
-            this.cursoName.HeaderText = "Nombre del Curso";
-            this.cursoName.Name = "cursoName";
-            // 
-            // cat
-            // 
-            this.cat.HeaderText = "Categoría";
-            this.cat.Name = "cat";
-            // 
-            // note
-            // 
-            this.note.HeaderText = "Nota";
-            this.note.Name = "note";
             // 
             // formAcad
             // 
@@ -626,33 +537,25 @@
             // delete
             // 
             this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete.Location = new System.Drawing.Point(612, 439);
+            this.delete.Location = new System.Drawing.Point(610, 441);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(171, 35);
             this.delete.TabIndex = 34;
             this.delete.Text = "Eliminar Cuenta";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // cambiarCuenta
             // 
             this.cambiarCuenta.AutoSize = true;
             this.cambiarCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cambiarCuenta.Location = new System.Drawing.Point(269, 166);
+            this.cambiarCuenta.Location = new System.Drawing.Point(9, 206);
             this.cambiarCuenta.Name = "cambiarCuenta";
-            this.cambiarCuenta.Size = new System.Drawing.Size(230, 20);
+            this.cambiarCuenta.Size = new System.Drawing.Size(155, 20);
             this.cambiarCuenta.TabIndex = 33;
             this.cambiarCuenta.TabStop = true;
-            this.cambiarCuenta.Text = "Editar Información de la cuenta";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 25);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Cursos Aprobados";
+            this.cambiarCuenta.Text = "Cambiar Contraseña";
+            this.cambiarCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.cambiarCuenta_LinkClicked);
             // 
             // usern
             // 
@@ -691,8 +594,42 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Categoría";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Costo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CadmusCursosOnline.Properties.Resources.promoción;
+            this.pictureBox2.Location = new System.Drawing.Point(91, 379);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(616, 97);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CadmusCursosOnline.Properties.Resources.logoFrase;
+            this.pictureBox1.Location = new System.Drawing.Point(91, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(616, 336);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID Curso";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // nota
+            // 
+            this.nota.HeaderText = "Nota";
+            this.nota.Name = "nota";
             // 
             // principalPage
             // 
@@ -705,8 +642,6 @@
             this.Text = "Pagina Principal";
             this.tabControl1.ResumeLayout(false);
             this.inicio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.inscription.ResumeLayout(false);
             this.inscription.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCursos1)).EndInit();
@@ -718,7 +653,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.myAccount.ResumeLayout(false);
             this.myAccount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -754,16 +690,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button retirarse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cursoName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn note;
         private System.Windows.Forms.Label formAcad;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label nac;
@@ -780,13 +706,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.LinkLabel cambiarCuenta;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label usern;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }
 
