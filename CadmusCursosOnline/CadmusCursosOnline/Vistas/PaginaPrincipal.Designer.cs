@@ -52,7 +52,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buscarCurProf = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.myCurses = new System.Windows.Forms.TabPage();
@@ -250,7 +250,7 @@
             this.teach.Controls.Add(this.cursosImpartidos);
             this.teach.Controls.Add(this.impartir);
             this.teach.Controls.Add(this.tablaCursos2);
-            this.teach.Controls.Add(this.button3);
+            this.teach.Controls.Add(this.buscarCurProf);
             this.teach.Controls.Add(this.textBox2);
             this.teach.Controls.Add(this.label2);
             this.teach.Location = new System.Drawing.Point(4, 22);
@@ -316,15 +316,15 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Horas";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // button3
+            // buscarCurProf
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(623, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 31);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Buscar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buscarCurProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarCurProf.Location = new System.Drawing.Point(623, 24);
+            this.buscarCurProf.Name = "buscarCurProf";
+            this.buscarCurProf.Size = new System.Drawing.Size(146, 31);
+            this.buscarCurProf.TabIndex = 7;
+            this.buscarCurProf.Text = "Buscar";
+            this.buscarCurProf.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -743,7 +743,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.Button impartir;
         private System.Windows.Forms.DataGridView tablaCursos2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buscarCurProf;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cursosImpartidos;

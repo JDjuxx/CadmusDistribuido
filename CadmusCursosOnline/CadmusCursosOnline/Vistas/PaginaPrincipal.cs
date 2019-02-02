@@ -13,10 +13,13 @@ namespace CadmusCursosOnline
     public partial class principalPage : Form
     {
         Boolean flag = true;
+        CargarTablas cargarTablas = new CargarTablas();
 
         public principalPage()
         {
             InitializeComponent();
+
+            
         }
 
         private void inicio_Click(object sender, EventArgs e)
@@ -66,5 +69,6 @@ namespace CadmusCursosOnline
         {
 
         }
+
     }
 }
