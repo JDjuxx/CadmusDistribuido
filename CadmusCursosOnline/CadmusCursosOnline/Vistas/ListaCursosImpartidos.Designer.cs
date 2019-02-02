@@ -33,12 +33,12 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volver = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cursosImpartidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteCurso)).BeginInit();
             this.SuspendLayout();
@@ -50,8 +50,8 @@
             this.cursosImpartidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCurso,
             this.name,
-            this.categoria,
-            this.horas});
+            this.horas,
+            this.Pago});
             this.cursosImpartidos.Location = new System.Drawing.Point(12, 37);
             this.cursosImpartidos.Name = "cursosImpartidos";
             this.cursosImpartidos.Size = new System.Drawing.Size(443, 106);
@@ -85,26 +85,6 @@
             this.nota.HeaderText = "Nota";
             this.nota.Name = "nota";
             // 
-            // idCurso
-            // 
-            this.idCurso.HeaderText = "ID Curso";
-            this.idCurso.Name = "idCurso";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Nombre";
-            this.name.Name = "name";
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoría";
-            this.categoria.Name = "categoria";
-            // 
-            // horas
-            // 
-            this.horas.HeaderText = "Horas";
-            this.horas.Name = "horas";
-            // 
             // volver
             // 
             this.volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +107,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // idCurso
+            // 
+            this.idCurso.HeaderText = "ID Curso";
+            this.idCurso.Name = "idCurso";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nombre";
+            this.name.Name = "name";
+            // 
+            // horas
+            // 
+            this.horas.HeaderText = "Horas";
+            this.horas.Name = "horas";
+            // 
+            // Pago
+            // 
+            this.Pago.HeaderText = "Costo";
+            this.Pago.Name = "Pago";
+            // 
             // ListaCursosImpartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +138,7 @@
             this.Controls.Add(this.cursosImpartidos);
             this.Name = "ListaCursosImpartidos";
             this.Text = "ListaCursosImpartidos";
+            this.Load += new System.EventHandler(this.ListaCursosImpartidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cursosImpartidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteCurso)).EndInit();
             this.ResumeLayout(false);
@@ -147,15 +148,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView cursosImpartidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horas;
         private System.Windows.Forms.DataGridView estudianteCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.Button volver;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pago;
     }
 }

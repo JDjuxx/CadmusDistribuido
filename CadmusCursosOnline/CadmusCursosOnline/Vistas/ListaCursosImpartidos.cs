@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadmusCursosOnline.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,18 @@ namespace CadmusCursosOnline
 {
     public partial class ListaCursosImpartidos : Form
     {
+        MateriasImpartidas m = new MateriasImpartidas();
         principalPage page;
+        public int idM = 0;
         public ListaCursosImpartidos()
         {
             InitializeComponent();
             
+        }
+
+        public void ponerId(int id)
+        {
+            idM = id;
         }
 
         private void volver_Click(object sender, EventArgs e)
@@ -37,6 +45,12 @@ namespace CadmusCursosOnline
             c.Show();
             c.guardarEstado(this);
             this.Hide();
+        }
+
+        private void ListaCursosImpartidos_Load(object sender, EventArgs e)
+        {
+            m.cargarEst(cursosImpartidos, idM);
+            m.cargarNot();
         }
     }
 }
