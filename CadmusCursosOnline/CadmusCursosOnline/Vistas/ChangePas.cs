@@ -45,6 +45,13 @@ namespace CadmusCursosOnline.Vistas
             if (c.validarPass(textBox1.Text))
             {
                 c.cambiarPas(textBox2.Text, miemb);
+                MessageBox.Show("Cambio exitoso se cerrara su cuenta por seguridad");
+                new PgInicio().Show();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese bien su password");
             }
 
         }

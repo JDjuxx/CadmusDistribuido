@@ -12,8 +12,7 @@ namespace CadmusCursosOnline.Controlador
     {
         public void cargarEst(DataGridView tabla, int idM)
         {
-            string cadena = "SELECT * FROM Curso WHERE idCurso = (SELECT DISTINCT idCurso FROM Imparte WHERE idMiembro = "+idM+")";
-            MessageBox.Show(cadena);
+            string cadena = "SELECT * FROM Curso, Imparte WHERE Curso.idCurso = Imparte.idCurso AND idMiembro = "+idM+"";
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();
@@ -35,9 +34,28 @@ namespace CadmusCursosOnline.Controlador
             conection.CerrarConexion();
         }
 
-        public void cargarNot()
+        public void cargarNot(int idC, DataGridView tabla)
         {
-
+            string cadena = "SELECT Nombre, Apellido, Nota FROM Miembro, Toma WHERE Miembro.idMiembro = Toma.idMiembro AND idCurso = " + idC + "";
+            SqlCommand cmd = new SqlCommand();
+            Conexion conection = new Conexion();
+            cmd.Connection = conection.IniciarConexion();
+            cmd.CommandText = cadena;
+            cmd.ExecuteNonQuery();
+            try
+            {
+                SqlDataReader leer = cmd.ExecuteReader();
+                while (leer.Read())
+                {
+                    tabla.Rows.Add(leer["Nombre"].ToString(), leer["Apellido"].ToString(), leer["Nota"].ToString());
+                }
+                leer.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conection.CerrarConexion();
         }
     }
 }

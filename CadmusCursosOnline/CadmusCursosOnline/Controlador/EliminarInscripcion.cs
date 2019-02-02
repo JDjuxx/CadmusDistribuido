@@ -10,9 +10,12 @@ namespace CadmusCursosOnline.Controlador
     class EliminarInscripcion
     {
 
-        public void elimniarIns(int idCu, int idDir)
+
+
+
+        public void elimniarIns(int idCu, int idDir, int idM)
         {
-            string cadena = "EXEC dbo.deleteToma @dir = " + idDir + ", @id = " + idCu + "";
+            string cadena = "EXEC dbo.deleteToma1 @dir = " + idDir + ", @id = " + idM + ", @ic = "+idCu;
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();

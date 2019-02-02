@@ -16,6 +16,7 @@ namespace CadmusCursosOnline
         MateriasImpartidas m = new MateriasImpartidas();
         principalPage page;
         public int idM = 0;
+        public int idC = 0;
         public ListaCursosImpartidos()
         {
             InitializeComponent();
@@ -50,7 +51,13 @@ namespace CadmusCursosOnline
         private void ListaCursosImpartidos_Load(object sender, EventArgs e)
         {
             m.cargarEst(cursosImpartidos, idM);
-            m.cargarNot();
+            
+        }
+
+        private void cursosImpartidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            m.cargarNot(Int32.Parse(cursosImpartidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()),estudianteCurso);
         }
     }
 }

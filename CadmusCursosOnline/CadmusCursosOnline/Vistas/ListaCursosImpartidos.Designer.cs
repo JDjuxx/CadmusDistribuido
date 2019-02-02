@@ -56,6 +56,7 @@
             this.cursosImpartidos.Name = "cursosImpartidos";
             this.cursosImpartidos.Size = new System.Drawing.Size(443, 106);
             this.cursosImpartidos.TabIndex = 9;
+            this.cursosImpartidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cursosImpartidos_CellContentClick);
             // 
             // estudianteCurso
             // 
