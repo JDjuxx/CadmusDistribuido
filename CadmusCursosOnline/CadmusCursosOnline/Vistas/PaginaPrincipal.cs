@@ -18,8 +18,6 @@ namespace CadmusCursosOnline
         public principalPage()
         {
             InitializeComponent();
-
-            
         }
 
         private void inicio_Click(object sender, EventArgs e)
