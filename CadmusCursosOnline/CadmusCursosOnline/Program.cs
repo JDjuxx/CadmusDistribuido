@@ -16,7 +16,10 @@ namespace CadmusCursosOnline
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new principalPage());
+            Conexion conexion = new Conexion();
+            //conexion.IniciarConexion();
+            Application.Run(new PgInicio());
+            //Application.Run(new principalPage());
         }
     }
 }

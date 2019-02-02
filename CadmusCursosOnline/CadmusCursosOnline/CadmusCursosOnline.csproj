@@ -46,42 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calificar.cs">
+    <Compile Include="Conexion.cs" />
+    <Compile Include="PgInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calificar.Designer.cs">
+    <Compile Include="PgInicio.Designer.cs">
+      <DependentUpon>PgInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Calificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Calificar.Designer.cs">
       <DependentUpon>Calificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factura.cs">
+    <Compile Include="Vistas\Factura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Factura.Designer.cs">
+    <Compile Include="Vistas\Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaCursosImpartidos.cs">
+    <Compile Include="Vistas\ListaCursosImpartidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaCursosImpartidos.Designer.cs">
+    <Compile Include="Vistas\ListaCursosImpartidos.Designer.cs">
       <DependentUpon>ListaCursosImpartidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaginaPrincipal.cs">
+    <Compile Include="Vistas\PaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaginaPrincipal.Designer.cs">
+    <Compile Include="Vistas\PaginaPrincipal.Designer.cs">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Calificar.resx">
+    <EmbeddedResource Include="PgInicio.resx">
+      <DependentUpon>PgInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Factura.resx">
+    <EmbeddedResource Include="Vistas\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaCursosImpartidos.resx">
+    <EmbeddedResource Include="Vistas\ListaCursosImpartidos.resx">
       <DependentUpon>ListaCursosImpartidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaginaPrincipal.resx">
+    <EmbeddedResource Include="Vistas\PaginaPrincipal.resx">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
