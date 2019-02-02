@@ -8,5 +8,6 @@ namespace CadmusCursosOnline.Controlador
 {
     class InscribirCurso
     {
+
     }
 }

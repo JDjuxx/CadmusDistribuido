@@ -13,7 +13,7 @@ namespace CadmusCursosOnline
     public partial class principalPage : Form
     {
         Boolean flag = true;
-        CargarTablas cargarTablas = new CargarTablas();
+        CargarTablas IngresarProfesor = new CargarTablas();
 
         public principalPage()
         {
@@ -75,7 +75,7 @@ namespace CadmusCursosOnline
 
         private void teach_Click(object sender, EventArgs e)
         {
-            cargarTablas.cargarCursoProf();
+            IngresarProfesor.cargarCursoProf(tablaCursos2);
         }
     }
 }

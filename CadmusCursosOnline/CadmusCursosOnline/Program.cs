@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadmusCursosOnline.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace CadmusCursosOnline
             //conexion.IniciarConexion();
             Application.Run(new PgInicio());
             //Application.Run(new principalPage());
+            //Application.Run(new Registro());
         }
     }
 }

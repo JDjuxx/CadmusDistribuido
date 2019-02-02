@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.username = new System.Windows.Forms.TextBox();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
@@ -38,13 +38,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // username
+            // textBoxUser
             // 
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(388, 95);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(249, 29);
-            this.username.TabIndex = 1;
+            this.textBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUser.Location = new System.Drawing.Point(388, 95);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(249, 29);
+            this.textBoxUser.TabIndex = 1;
             // 
             // label1
             // 
@@ -94,6 +94,7 @@
             this.registrate.TabIndex = 6;
             this.registrate.TabStop = true;
             this.registrate.Text = "No tienes cuenta! regístrate ahora";
+            this.registrate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registrate_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -119,7 +120,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.username);
+            this.Controls.Add(this.textBoxUser);
             this.Name = "PgInicio";
             this.Text = "LOGIN";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -129,7 +130,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox textBoxUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox password;
