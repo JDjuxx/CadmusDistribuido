@@ -25,3 +25,18 @@ C:\Users\Trrr\Documents\GitHub\CadmusDistribuido\CadmusCursosOnline\CadmusCursos
 C:\Users\Trrr\Documents\GitHub\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.exe
 C:\Users\Trrr\Documents\GitHub\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.pdb
 C:\Users\Trrr\Documents\GitHub\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.PgInicio.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\bin\Debug\CadmusCursosOnline.exe.config
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\bin\Debug\CadmusCursosOnline.exe
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\bin\Debug\CadmusCursosOnline.pdb
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.csprojAssemblyReference.cache
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.PgInicio.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.Calificar.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.Factura.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.ListaCursosImpartidos.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.principalPage.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.Properties.Resources.resources
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.csproj.GenerateResource.cache
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.exe
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.pdb
+C:\Users\Juan Diego\source\repos\ProyectoCadmus\CadmusDistribuido\CadmusCursosOnline\CadmusCursosOnline\obj\Debug\CadmusCursosOnline.Vistas.ChangePas.resources

@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\ChangePass.cs" />
+    <Compile Include="Controlador\deleteAc.cs" />
+    <Compile Include="Controlador\EliminarInscripcion.cs" />
+    <Compile Include="Controlador\IngresarProfesor.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Controlador\InscribirCurso.cs" />
+    <Compile Include="Controlador\MateriasImpartidas.cs" />
     <Compile Include="PgInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     </Compile>
     <Compile Include="Vistas\Calificar.Designer.cs">
       <DependentUpon>Calificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ChangePas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ChangePas.Designer.cs">
+      <DependentUpon>ChangePas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Factura.cs">
       <SubType>Form</SubType>
@@ -84,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ChangePas.resx">
+      <DependentUpon>ChangePas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>

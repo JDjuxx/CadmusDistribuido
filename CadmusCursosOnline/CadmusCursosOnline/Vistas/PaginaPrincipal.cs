@@ -18,6 +18,8 @@ namespace CadmusCursosOnline
         public int idDireccion = 1;
         public int idCurs = 0;
         CargarTablas ingresarProf = new CargarTablas();
+        Boolean flag = true;
+  
 
         public principalPage()
         {
@@ -83,6 +85,7 @@ namespace CadmusCursosOnline
 
         private void teach_Click(object sender, EventArgs e)
         {
+
             ingresarProf.cargarCursoProf(tablaCursos2,idDireccion);
         }
 
@@ -106,6 +109,7 @@ namespace CadmusCursosOnline
             this.Dispose();
             new PgInicio().Show();
             
+
         }
     }
 }
