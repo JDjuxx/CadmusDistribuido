@@ -26,6 +26,12 @@ namespace CadmusCursosOnline
             InitializeComponent();
         }
 
+        public void receptarDatos(int u, int d)
+        {
+            idUsuario = u;
+            idDireccion = d;
+        }
+
         private void inicio_Click(object sender, EventArgs e)
         {
 
@@ -43,6 +49,12 @@ namespace CadmusCursosOnline
 
         private void choose_Click(object sender, EventArgs e)
         {
+            InscribirCurso inscribir = new InscribirCurso();
+
+
+            int id = idCurs;
+            String ingresarCurso = "INSERT INTO TOMA VALUES (" + idUsuario + "," + idCurs + ", 0)";
+            inscribir.insert(ingresarCurso);
             Factura f = new Factura();
             f.Show();
             f.guardarEstado(this);
@@ -109,6 +121,21 @@ namespace CadmusCursosOnline
             this.Dispose();
             new PgInicio().Show();
             
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            String Nombre = textBox1.Text;
+            InscribirCurso inscribir = new InscribirCurso();
+            //tabla.Rows.Add(dr["idCurso"].ToString(), dr["Nombre"].ToString(), dr["HORAS"].ToString(), dr["Costo"].ToString());
+            inscribir.select(tablaCursos1, "SELECT idCurso, Nombre, HORAS, Costo FROM Curso WHERE Nombre = '" + Nombre + "'");
+        }
+
+        private void tablaCursos1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCurs = Int32.Parse(tablaCursos2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
 
         }
     }

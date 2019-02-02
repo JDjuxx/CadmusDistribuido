@@ -38,12 +38,12 @@ namespace CadmusCursosOnline
             Autenticar auth = new Autenticar();
             try
             {
-                String consulta = "SELECT Usuario, Contrasena FROM Miembro WHERE Usuario = '" + Username + "'";
+                String consulta = "SELECT Usuario, Contrasena, idMiembro, idDireccion FROM Miembro WHERE Usuario = '" + Username + "'";
                 String[] data = auth.select(consulta);
 
                 if (data[1].Equals(password.Text))
                 {
-
+                  
                     new Conexion().IniciarConexion();
                     new principalPage().Show();
                     this.Hide();

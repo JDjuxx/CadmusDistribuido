@@ -24,6 +24,8 @@ namespace CadmusCursosOnline.Controlador
                
                 data[0] = Convert.ToString(dr[0]);
                 data[1] = Convert.ToString(dr[1]);
+                data[2] = Convert.ToString(dr[2]);
+                data[3] = Convert.ToString(dr[3]);
             }
 
             return data;

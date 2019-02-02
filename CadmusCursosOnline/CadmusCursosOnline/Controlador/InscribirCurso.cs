@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CadmusCursosOnline.Controlador
 {
     class InscribirCurso
     {
 
-        public String[] select(String Select)
+        public void select(DataGridView tabla,String Select)
         {
 
             String[] data = new String[4];
@@ -20,14 +21,33 @@ namespace CadmusCursosOnline.Controlador
             cmd.CommandText = Select;
             cmd.ExecuteNonQuery();
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+       
+            try
             {
-
-                data[0] = Convert.ToString(dr[0]);
-                data[1] = Convert.ToString(dr[1]);
+                while (dr.Read())
+                {
+                    tabla.Rows.Add(dr["idCurso"].ToString(), dr["Nombre"].ToString(), dr["HORAS"].ToString(), dr["Costo"].ToString());
+                }
+                dr.Close();
             }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conexion.CerrarConexion();
 
-            return data;
+
+     
+        }
+
+        public void insert(String Insert)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexion conexion = new Conexion();
+            cmd.Connection = conexion.IniciarConexion();
+            cmd.CommandText = Insert;
+            cmd.ExecuteNonQuery();
+
 
         }
 
