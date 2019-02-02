@@ -15,7 +15,7 @@ namespace CadmusCursosOnline
         
         public void cargarCursoProf(DataGridView tabla)
         {
-            String[] values = new String[4];
+            String[] values = new String[4]; 
             string cadena = "SELECT * FROM Curso01";
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
