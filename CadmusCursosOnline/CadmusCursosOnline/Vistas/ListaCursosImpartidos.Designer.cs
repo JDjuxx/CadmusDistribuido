@@ -34,7 +34,6 @@
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volver = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,24 +88,13 @@
             // volver
             // 
             this.volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volver.Location = new System.Drawing.Point(476, 396);
+            this.volver.Location = new System.Drawing.Point(646, 396);
             this.volver.Name = "volver";
             this.volver.Size = new System.Drawing.Size(142, 42);
             this.volver.TabIndex = 11;
             this.volver.Text = "Regresar";
             this.volver.UseVisualStyleBackColor = true;
             this.volver.Click += new System.EventHandler(this.volver_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(646, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 42);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Calificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // idCurso
             // 
@@ -133,7 +121,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.volver);
             this.Controls.Add(this.estudianteCurso);
             this.Controls.Add(this.cursosImpartidos);
@@ -154,7 +141,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.Button volver;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;

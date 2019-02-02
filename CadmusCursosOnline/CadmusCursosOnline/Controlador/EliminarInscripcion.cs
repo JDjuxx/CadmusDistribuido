@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CadmusCursosOnline.Controlador
 {
@@ -21,6 +22,7 @@ namespace CadmusCursosOnline.Controlador
             cmd.Connection = conection.IniciarConexion();
             cmd.CommandText = cadena;
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Materia Eliminada");
         }
     }
 }
