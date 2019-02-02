@@ -88,7 +88,7 @@
             // registrate
             // 
             this.registrate.AutoSize = true;
-            this.registrate.Location = new System.Drawing.Point(451, 332);
+            this.registrate.Location = new System.Drawing.Point(432, 330);
             this.registrate.Name = "registrate";
             this.registrate.Size = new System.Drawing.Size(169, 13);
             this.registrate.TabIndex = 6;

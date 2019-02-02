@@ -30,8 +30,10 @@ namespace CadmusCursosOnline
 
         private void ingresar_Click(object sender, EventArgs e)
         {
+            new Conexion().IniciarConexion();
             new principalPage().Show();
             this.Hide();
+
         }
     }
 }
