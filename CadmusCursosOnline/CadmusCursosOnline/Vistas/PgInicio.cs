@@ -1,4 +1,5 @@
 ﻿using CadmusCursosOnline.Controlador;
+using CadmusCursosOnline.Vistas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -65,7 +66,10 @@ namespace CadmusCursosOnline
 
         private void registrate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //new Regi
+            Registro r = new Registro();
+            r.Show();
+            r.guardarEstado(this);
+            this.Hide();
         }
     }
 }

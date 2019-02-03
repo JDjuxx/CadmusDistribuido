@@ -14,6 +14,8 @@ namespace CadmusCursosOnline.Vistas
 {
     public partial class Registro : Form
     {
+        PgInicio p;
+
         public Registro()
         {
             InitializeComponent();
@@ -51,17 +53,27 @@ namespace CadmusCursosOnline.Vistas
             {
                 MessageBox.Show("Error");
             }
-            
+            this.Dispose();
+            p.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            this.Dispose();
+            p.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        public void guardarEstado(PgInicio page)
+        {
+            p = page;
+        }
     }
+
+
 }

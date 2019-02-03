@@ -53,7 +53,7 @@
             this.myCurses = new System.Windows.Forms.TabPage();
             this.retirarse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+           // this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
@@ -65,11 +65,9 @@
             this.nac = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.Label();
             this.cuprest = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.Label();
             this.apellido = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,6 +80,15 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.inicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -325,6 +332,7 @@
             this.myCurses.TabIndex = 3;
             this.myCurses.Text = "Mis Cursos";
             this.myCurses.UseVisualStyleBackColor = true;
+            this.myCurses.Click += new System.EventHandler(this.myCurses_Click);
             // 
             // retirarse
             // 
@@ -342,19 +350,19 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.nota});
+            this.nota,
+            this.idcc});
             this.dataGridView1.Location = new System.Drawing.Point(18, 90);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(349, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 199);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID Curso";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+      //      this.dataGridViewTextBoxColumn5.HeaderText = "ID Curso";
+      //      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -401,11 +409,9 @@
             this.myAccount.Controls.Add(this.nac);
             this.myAccount.Controls.Add(this.dob);
             this.myAccount.Controls.Add(this.cuprest);
-            this.myAccount.Controls.Add(this.email);
             this.myAccount.Controls.Add(this.apellido);
             this.myAccount.Controls.Add(this.name);
             this.myAccount.Controls.Add(this.label11);
-            this.myAccount.Controls.Add(this.label10);
             this.myAccount.Controls.Add(this.label9);
             this.myAccount.Controls.Add(this.label8);
             this.myAccount.Controls.Add(this.label7);
@@ -420,6 +426,7 @@
             this.myAccount.TabIndex = 4;
             this.myAccount.Text = "Mi Cuenta";
             this.myAccount.UseVisualStyleBackColor = true;
+            this.myAccount.Click += new System.EventHandler(this.myAccount_Click);
             // 
             // formAcad
             // 
@@ -427,9 +434,8 @@
             this.formAcad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formAcad.Location = new System.Drawing.Point(594, 125);
             this.formAcad.Name = "formAcad";
-            this.formAcad.Size = new System.Drawing.Size(78, 24);
+            this.formAcad.Size = new System.Drawing.Size(0, 24);
             this.formAcad.TabIndex = 48;
-            this.formAcad.Text = "asdfadsf";
             // 
             // label18
             // 
@@ -448,9 +454,8 @@
             this.nac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nac.Location = new System.Drawing.Point(594, 86);
             this.nac.Name = "nac";
-            this.nac.Size = new System.Drawing.Size(78, 24);
+            this.nac.Size = new System.Drawing.Size(0, 24);
             this.nac.TabIndex = 46;
-            this.nac.Text = "asdfadsf";
             // 
             // dob
             // 
@@ -458,9 +463,8 @@
             this.dob.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob.Location = new System.Drawing.Point(594, 46);
             this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(78, 24);
+            this.dob.Size = new System.Drawing.Size(0, 24);
             this.dob.TabIndex = 45;
-            this.dob.Text = "asdfadsf";
             // 
             // cuprest
             // 
@@ -468,59 +472,36 @@
             this.cuprest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuprest.Location = new System.Drawing.Point(594, 11);
             this.cuprest.Name = "cuprest";
-            this.cuprest.Size = new System.Drawing.Size(78, 24);
+            this.cuprest.Size = new System.Drawing.Size(0, 24);
             this.cuprest.TabIndex = 44;
-            this.cuprest.Text = "asdfadsf";
-            // 
-            // email
-            // 
-            this.email.AutoSize = true;
-            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.Location = new System.Drawing.Point(145, 125);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(78, 24);
-            this.email.TabIndex = 43;
-            this.email.Text = "asdfadsf";
             // 
             // apellido
             // 
             this.apellido.AutoSize = true;
             this.apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellido.Location = new System.Drawing.Point(145, 86);
+            this.apellido.Location = new System.Drawing.Point(145, 112);
             this.apellido.Name = "apellido";
-            this.apellido.Size = new System.Drawing.Size(78, 24);
+            this.apellido.Size = new System.Drawing.Size(0, 24);
             this.apellido.TabIndex = 42;
-            this.apellido.Text = "asdfadsf";
             // 
             // name
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(145, 46);
+            this.name.Location = new System.Drawing.Point(145, 70);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(78, 24);
+            this.name.Size = new System.Drawing.Size(0, 24);
             this.name.TabIndex = 41;
-            this.name.Text = "asdfadsf";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 86);
+            this.label11.Location = new System.Drawing.Point(9, 112);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 24);
             this.label11.TabIndex = 40;
             this.label11.Text = "Apellido:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 125);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 24);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Email:";
             // 
             // label9
             // 
@@ -557,7 +538,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 46);
+            this.label6.Location = new System.Drawing.Point(9, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 24);
             this.label6.TabIndex = 35;
@@ -578,7 +559,7 @@
             // 
             this.cambiarCuenta.AutoSize = true;
             this.cambiarCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cambiarCuenta.Location = new System.Drawing.Point(9, 206);
+            this.cambiarCuenta.Location = new System.Drawing.Point(9, 182);
             this.cambiarCuenta.Name = "cambiarCuenta";
             this.cambiarCuenta.Size = new System.Drawing.Size(155, 20);
             this.cambiarCuenta.TabIndex = 33;
@@ -590,17 +571,16 @@
             // 
             this.usern.AutoSize = true;
             this.usern.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usern.Location = new System.Drawing.Point(145, 11);
+            this.usern.Location = new System.Drawing.Point(145, 25);
             this.usern.Name = "usern";
-            this.usern.Size = new System.Drawing.Size(78, 24);
+            this.usern.Size = new System.Drawing.Size(0, 24);
             this.usern.TabIndex = 31;
-            this.usern.Text = "asdfadsf";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 11);
+            this.label4.Location = new System.Drawing.Point(9, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 24);
             this.label4.TabIndex = 30;
@@ -625,6 +605,11 @@
             // 
             this.costo.HeaderText = "Costo";
             this.costo.Name = "costo";
+            // 
+            // idcc
+            // 
+            this.idcc.HeaderText = "id Curso";
+            this.idcc.Name = "idcc";
             // 
             // principalPage
             // 
@@ -685,11 +670,9 @@
         private System.Windows.Forms.Label nac;
         private System.Windows.Forms.Label dob;
         private System.Windows.Forms.Label cuprest;
-        private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label apellido;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -702,13 +685,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcc;
     }
 }
 
