@@ -11,7 +11,7 @@ namespace CadmusCursosOnline.Controlador
     class InscribirCurso
     {
 
-        public void select(DataGridView tabla,String Select)
+        public void Select(DataGridView tabla,String Select)
         {
 
             String[] data = new String[4];
@@ -24,9 +24,11 @@ namespace CadmusCursosOnline.Controlador
        
             try
             {
+                tabla.Rows.Clear();
+                tabla.Refresh();
                 while (dr.Read())
                 {
-                    tabla.Rows.Add(dr["idCurso"].ToString(), dr["Nombre"].ToString(), dr["HORAS"].ToString(), dr["Costo"].ToString());
+                    tabla.Rows.Add(dr["Nombre"].ToString(), dr["Costo"].ToString(), dr["Horas"].ToString());
                 }
                 dr.Close();
             }
@@ -40,7 +42,7 @@ namespace CadmusCursosOnline.Controlador
      
         }
 
-        public void insert(String Insert)
+        public void Insert(String Insert)
         {
             SqlCommand cmd = new SqlCommand();
             Conexion conexion = new Conexion();

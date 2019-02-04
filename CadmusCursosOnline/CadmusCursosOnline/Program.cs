@@ -20,10 +20,8 @@ namespace CadmusCursosOnline
             Application.SetCompatibleTextRenderingDefault(false);
             Conexion conexion = new Conexion();
             //conexion.IniciarConexion();
-            Application.Run(new principalPage());
-            //Application.Run(new principalPage());
-            //Application.Run(new Registro());
-            Miembro miembro = new Miembro();
+            // Application.Run(new principalPage());
+            Application.Run(new PgInicio());            
         }
     }
 }

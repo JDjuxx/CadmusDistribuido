@@ -1,4 +1,5 @@
 ﻿using CadmusCursosOnline.Controlador;
+using CadmusCursosOnline.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace CadmusCursosOnline.Vistas
     public partial class Registro : Form
     {
         PgInicio p;
+        MiembroEnt miembro = new MiembroEnt();
+
 
         public Registro()
         {
@@ -24,33 +27,38 @@ namespace CadmusCursosOnline.Vistas
         private void button1_Click(object sender, EventArgs e)
         {
 
-            String Usuario = textBoxUsuario.Text;
-            String Password = textBoxPassword.Text;
-            String Nombre = textBoxNombre.Text;
-            String Apellido = textBoxApellido.Text;
-            String Nacionalidad = textBoxNacionalidad.Text;
-            String FA = textBoxFA.Text;
-            String DOB = dateTimePicker1.Value.ToString("yyyy/MM/dd");
-            String Direccion = comboBox1.GetItemText(comboBox1.SelectedItem);
-
-            String bp = "SELECT TOP 1 * FROM Miembro ORDER BY idMiembro DESC ";
+            miembro.Usuario = textBoxUsuario.Text;
+            miembro.SetPassword(textBoxPassword.Text);
+            miembro.Nombre = textBoxNombre.Text;
+            miembro.Apellido = textBoxApellido.Text;
+            miembro.Nacionalidad = comboBox2.GetItemText(comboBox2.SelectedItem);
+            miembro.FormacionA = comboBox3.GetItemText(comboBox3.SelectedItem);
+            miembro.DOB = dateTimePicker1.Value.ToString("yyyy/MM/dd");
+            String sucursal = comboBox1.GetItemText(comboBox1.SelectedItem);
+            if (sucursal.Equals("Estados Unidos"))
+                miembro.IdDireccion = 1;
+            else
+                miembro.IdDireccion = 2;
+      
+            String bp = "EXEC UltIdMie";
             SqlCommand cmd = new SqlCommand();
             Conexion conexion = new Conexion();
             cmd.Connection = conexion.IniciarConexion();
             cmd.CommandText = bp;
             SqlDataReader dr = cmd.ExecuteReader();
-            int idMiembro = 100;
             if (dr.Read())
-                idMiembro = Convert.ToInt32(dr[0]) + 1;
+                miembro.IdMiembro = Convert.ToInt32(dr[0]) + 1;
 
             RegistrarMiembro registrar = new RegistrarMiembro();
             try
             {
-                registrar.insertar("EXEC dbo.insertMiembro @id = " + idMiembro + ", @us = '" + Usuario + "', @con = '" + Password + "', @salt = 'salt'," + " @cup = " + 1 + ", @nom = " + Nombre + ", @ape = " + Apellido + ", @dob = '" + DOB + "', @nac = " + Nacionalidad + ", @for = " + FA + ", @num = 0, @dir = " + Direccion);
+                String query = "EXEC dbo.insertMiembro @id = " + miembro.IdMiembro + ", @us = '" + miembro.Usuario + "', @con = '" + miembro.Contrasena + "', @salt = '" + miembro.Salt + "', @cup = " + miembro.CupoCurGrat + ", @nom = " + miembro.Nombre + ", @ape = " + miembro.Apellido + ", @dob = '" + miembro.DOB + "', @nac = " + miembro.Nacionalidad + ", @for = '" + miembro.FormacionA + "', @num = 0, @dir = " + miembro.IdDireccion;
+                registrar.insertar("EXEC dbo.insertMiembro @id = " + miembro.IdMiembro + ", @us = '" + miembro.Usuario + "', @con = '" + miembro.Contrasena + "', @salt = '" + miembro.Salt + "', @cup = " + miembro.CupoCurGrat + ", @nom = " + miembro.Nombre + ", @ape = " + miembro.Apellido + ", @dob = '" + miembro.DOB + "', @nac = " + miembro.Nacionalidad + ", @for = " + miembro.FormacionA + ", @num = 0, @dir = " + miembro.IdDireccion);
                 MessageBox.Show("Exito");
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                MessageBox.Show(Convert.ToString(error));
                 MessageBox.Show("Error");
             }
             this.Dispose();

@@ -36,6 +36,9 @@
             this.inscription = new System.Windows.Forms.TabPage();
             this.choose = new System.Windows.Forms.Button();
             this.tablaCursos1 = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,23 +46,26 @@
             this.cursosImpartidos = new System.Windows.Forms.Button();
             this.impartir = new System.Windows.Forms.Button();
             this.tablaCursos2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buscarCurProf = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.myCurses = new System.Windows.Forms.TabPage();
             this.retirarse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-           // this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.myAccount = new System.Windows.Forms.TabPage();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelApellido = new System.Windows.Forms.Label();
+            this.labelCup = new System.Windows.Forms.Label();
+            this.labelDob = new System.Windows.Forms.Label();
+            this.labelNac = new System.Windows.Forms.Label();
+            this.labelFA = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
             this.formAcad = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.nac = new System.Windows.Forms.Label();
@@ -76,19 +82,9 @@
             this.cambiarCuenta = new System.Windows.Forms.LinkLabel();
             this.usern = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.inicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -114,6 +110,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(798, 511);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // inicio
             // 
@@ -161,6 +158,7 @@
             this.inscription.TabIndex = 1;
             this.inscription.Text = "Incríbete";
             this.inscription.UseVisualStyleBackColor = true;
+            this.inscription.Enter += new System.EventHandler(this.inscription_Enter);
             // 
             // choose
             // 
@@ -178,15 +176,31 @@
             this.tablaCursos1.AllowUserToOrderColumns = true;
             this.tablaCursos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCursos1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCurso,
             this.nombre,
-            this.horas,
-            this.costo});
+            this.Costo,
+            this.Horas});
             this.tablaCursos1.Location = new System.Drawing.Point(10, 117);
             this.tablaCursos1.Name = "tablaCursos1";
-            this.tablaCursos1.Size = new System.Drawing.Size(446, 262);
+            this.tablaCursos1.Size = new System.Drawing.Size(353, 262);
             this.tablaCursos1.TabIndex = 3;
             this.tablaCursos1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCursos1_CellContentClick);
+            this.tablaCursos1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCursos1_CellEnter);
+            this.tablaCursos1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCursos1_RowEnter);
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            // 
+            // Horas
+            // 
+            this.Horas.HeaderText = "Horas";
+            this.Horas.Name = "Horas";
             // 
             // button1
             // 
@@ -232,7 +246,7 @@
             this.teach.TabIndex = 2;
             this.teach.Text = "Impartir Curso";
             this.teach.UseVisualStyleBackColor = true;
-            this.teach.Click += new System.EventHandler(this.teach_Click);
+            this.teach.Enter += new System.EventHandler(this.teach_Enter);
             // 
             // cursosImpartidos
             // 
@@ -261,7 +275,6 @@
             this.tablaCursos2.AllowUserToOrderColumns = true;
             this.tablaCursos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCursos2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn3});
@@ -270,26 +283,6 @@
             this.tablaCursos2.Size = new System.Drawing.Size(445, 262);
             this.tablaCursos2.TabIndex = 8;
             this.tablaCursos2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCursos2_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID Curso";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Horas";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Costo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // buscarCurProf
             // 
@@ -300,6 +293,7 @@
             this.buscarCurProf.TabIndex = 7;
             this.buscarCurProf.Text = "Buscar";
             this.buscarCurProf.UseVisualStyleBackColor = true;
+            this.buscarCurProf.Click += new System.EventHandler(this.buscarCurProf_Click);
             // 
             // textBox2
             // 
@@ -333,6 +327,7 @@
             this.myCurses.Text = "Mis Cursos";
             this.myCurses.UseVisualStyleBackColor = true;
             this.myCurses.Click += new System.EventHandler(this.myCurses_Click);
+            this.myCurses.Enter += new System.EventHandler(this.myCurses_Enter);
             // 
             // retirarse
             // 
@@ -350,19 +345,19 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCurso,
             this.dataGridViewTextBoxColumn6,
-            this.nota,
-            this.idcc});
+            this.nota});
             this.dataGridView1.Location = new System.Drawing.Point(18, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(344, 199);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn5
+            // idCurso
             // 
-      //      this.dataGridViewTextBoxColumn5.HeaderText = "ID Curso";
-      //      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.idCurso.HeaderText = "idCurso";
+            this.idCurso.Name = "idCurso";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -383,6 +378,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // textBox3
             // 
@@ -404,6 +400,13 @@
             // 
             // myAccount
             // 
+            this.myAccount.Controls.Add(this.labelNombre);
+            this.myAccount.Controls.Add(this.labelApellido);
+            this.myAccount.Controls.Add(this.labelCup);
+            this.myAccount.Controls.Add(this.labelDob);
+            this.myAccount.Controls.Add(this.labelNac);
+            this.myAccount.Controls.Add(this.labelFA);
+            this.myAccount.Controls.Add(this.labelUsuario);
             this.myAccount.Controls.Add(this.formAcad);
             this.myAccount.Controls.Add(this.label18);
             this.myAccount.Controls.Add(this.nac);
@@ -427,6 +430,70 @@
             this.myAccount.Text = "Mi Cuenta";
             this.myAccount.UseVisualStyleBackColor = true;
             this.myAccount.Click += new System.EventHandler(this.myAccount_Click);
+            this.myAccount.Enter += new System.EventHandler(this.myAccount_Enter);
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(99, 70);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(0, 22);
+            this.labelNombre.TabIndex = 55;
+            // 
+            // labelApellido
+            // 
+            this.labelApellido.AutoSize = true;
+            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellido.Location = new System.Drawing.Point(99, 112);
+            this.labelApellido.Name = "labelApellido";
+            this.labelApellido.Size = new System.Drawing.Size(0, 22);
+            this.labelApellido.TabIndex = 54;
+            // 
+            // labelCup
+            // 
+            this.labelCup.AutoSize = true;
+            this.labelCup.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCup.Location = new System.Drawing.Point(559, 11);
+            this.labelCup.Name = "labelCup";
+            this.labelCup.Size = new System.Drawing.Size(0, 22);
+            this.labelCup.TabIndex = 53;
+            // 
+            // labelDob
+            // 
+            this.labelDob.AutoSize = true;
+            this.labelDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDob.Location = new System.Drawing.Point(435, 46);
+            this.labelDob.Name = "labelDob";
+            this.labelDob.Size = new System.Drawing.Size(0, 22);
+            this.labelDob.TabIndex = 52;
+            // 
+            // labelNac
+            // 
+            this.labelNac.AutoSize = true;
+            this.labelNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNac.Location = new System.Drawing.Point(505, 86);
+            this.labelNac.Name = "labelNac";
+            this.labelNac.Size = new System.Drawing.Size(0, 22);
+            this.labelNac.TabIndex = 51;
+            // 
+            // labelFA
+            // 
+            this.labelFA.AutoSize = true;
+            this.labelFA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFA.Location = new System.Drawing.Point(583, 128);
+            this.labelFA.Name = "labelFA";
+            this.labelFA.Size = new System.Drawing.Size(0, 22);
+            this.labelFA.TabIndex = 50;
+            // 
+            // labelUsuario
+            // 
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.Location = new System.Drawing.Point(94, 25);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(0, 22);
+            this.labelUsuario.TabIndex = 49;
             // 
             // formAcad
             // 
@@ -586,30 +653,20 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Usuario:";
             // 
-            // idCurso
+            // dataGridViewTextBoxColumn2
             // 
-            this.idCurso.HeaderText = "IdCurso";
-            this.idCurso.Name = "idCurso";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // nombre
+            // dataGridViewTextBoxColumn4
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Horas";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // horas
+            // dataGridViewTextBoxColumn3
             // 
-            this.horas.HeaderText = "Horas";
-            this.horas.Name = "horas";
-            // 
-            // costo
-            // 
-            this.costo.HeaderText = "Costo";
-            this.costo.Name = "costo";
-            // 
-            // idcc
-            // 
-            this.idcc.HeaderText = "id Curso";
-            this.idcc.Name = "idcc";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Costo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // principalPage
             // 
@@ -681,17 +738,22 @@
         private System.Windows.Forms.LinkLabel cambiarCuenta;
         private System.Windows.Forms.Label usern;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelApellido;
+        private System.Windows.Forms.Label labelCup;
+        private System.Windows.Forms.Label labelDob;
+        private System.Windows.Forms.Label labelNac;
+        private System.Windows.Forms.Label labelFA;
+        private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcc;
     }
 }
 

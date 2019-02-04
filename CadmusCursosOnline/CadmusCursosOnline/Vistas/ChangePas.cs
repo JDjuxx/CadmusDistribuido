@@ -1,8 +1,10 @@
 ﻿using CadmusCursosOnline.Controlador;
+using CadmusCursosOnline.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,13 +15,14 @@ namespace CadmusCursosOnline.Vistas
 {
     public partial class ChangePas : Form
     {
-
+        int idMiembro;
+        MiembroEnt miembro = new MiembroEnt();
         ChangePass c = new ChangePass();
         principalPage page;
-        public int miemb = 0;
-        public ChangePas()
+        public ChangePas(int idMiembro)
         {
             InitializeComponent();
+            this.idMiembro = idMiembro;
         }
 
         public void guardarEstado(principalPage p)
@@ -35,25 +38,50 @@ namespace CadmusCursosOnline.Vistas
 
         }
 
-        public void ponerId(int id)
-        {
-            miemb = id;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (c.validarPass(textBox1.Text))
+            String query = "EXEC SelectMiembro " + idMiembro;
+            consultarHash(query);
+            if (this.miembro.ContrasenaCorrecta(textBox1.Text))
             {
-                c.cambiarPas(textBox2.Text, miemb);
+                MessageBox.Show(miembro.Salt);
+                miembro.SetPassword2(textBox2.Text);
+                c.cambiarPas(miembro.Contrasena, idMiembro);
                 MessageBox.Show("Cambio exitoso se cerrara su cuenta por seguridad");
                 new PgInicio().Show();
                 this.Dispose();
             }
             else
             {
-                MessageBox.Show("Ingrese bien su password");
+                MessageBox.Show("Password Incorrecta");
             }
 
+        }
+        public void consultarHash(String INSERT)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            Conexion conexion = new Conexion();
+            cmd.Connection = conexion.IniciarConexion();
+            cmd.CommandText = INSERT;
+            cmd.ExecuteNonQuery();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            try
+            {
+                while (dr.Read())
+                {
+                    this.miembro.Salt = dr["Salt"].ToString();
+                    this.miembro.Contrasena = dr["Contrasena"].ToString();
+                }
+                dr.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conexion.CerrarConexion();
         }
     }
 }

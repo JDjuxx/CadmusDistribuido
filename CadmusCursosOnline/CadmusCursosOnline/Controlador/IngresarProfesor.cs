@@ -50,7 +50,7 @@ namespace CadmusCursosOnline
                 SqlDataReader leer = cmd.ExecuteReader();
                 if (leer.Read())
                 {
-                    if (leer["FormacionAcademica"].Equals("Phd"))
+                    if (leer["FormacionAcademica"].Equals("PhD"))
                     {
                         conection.CerrarConexion();
                         return true;
@@ -73,7 +73,16 @@ namespace CadmusCursosOnline
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();
             cmd.CommandText = cadena;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Usted ya impartio ese curso");
+            }
+        
         }
     }
 }

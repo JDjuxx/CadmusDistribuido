@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CadmusCursosOnline.Controlador
 {
-    class deleteAc
+    class DeletMiembro
     {
         public void elimnateCu(int idMiem)
         {
-            string cadena = "EXEC dbo.deleteMiembro1 @id = " + idMiem;
+            string cadena = "EXEC dbo.deleteMiembro @id = " + idMiem;
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();

@@ -70,9 +70,11 @@
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(388, 210);
+            this.password.MaxLength = 32;
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(249, 29);
-            this.password.TabIndex = 4;
+            this.password.TabIndex = 2;
             // 
             // ingresar
             // 
@@ -80,7 +82,7 @@
             this.ingresar.Location = new System.Drawing.Point(474, 276);
             this.ingresar.Name = "ingresar";
             this.ingresar.Size = new System.Drawing.Size(93, 33);
-            this.ingresar.TabIndex = 5;
+            this.ingresar.TabIndex = 3;
             this.ingresar.Text = "Ingresar";
             this.ingresar.UseVisualStyleBackColor = true;
             this.ingresar.Click += new System.EventHandler(this.ingresar_Click);
@@ -91,7 +93,7 @@
             this.registrate.Location = new System.Drawing.Point(432, 330);
             this.registrate.Name = "registrate";
             this.registrate.Size = new System.Drawing.Size(169, 13);
-            this.registrate.TabIndex = 6;
+            this.registrate.TabIndex = 4;
             this.registrate.TabStop = true;
             this.registrate.Text = "No tienes cuenta! regístrate ahora";
             this.registrate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registrate_LinkClicked);

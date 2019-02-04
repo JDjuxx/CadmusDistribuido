@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.idFactura = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fact = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,22 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.direccion = new System.Windows.Forms.Label();
             this.desc = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             this.acept = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // idFactura
-            // 
-            this.idFactura.AutoSize = true;
-            this.idFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idFactura.Location = new System.Drawing.Point(12, 9);
-            this.idFactura.Name = "idFactura";
-            this.idFactura.Size = new System.Drawing.Size(150, 25);
-            this.idFactura.TabIndex = 0;
-            this.idFactura.Text = "idFactura5998";
             // 
             // label1
             // 
@@ -124,16 +113,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Total: ";
             // 
-            // direccion
-            // 
-            this.direccion.AutoSize = true;
-            this.direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direccion.Location = new System.Drawing.Point(140, 132);
-            this.direccion.Name = "direccion";
-            this.direccion.Size = new System.Drawing.Size(82, 25);
-            this.direccion.TabIndex = 8;
-            this.direccion.Text = "asdfasf";
-            // 
             // desc
             // 
             this.desc.AutoSize = true;
@@ -176,16 +155,23 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(145, 132);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.TabIndex = 13;
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 316);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.acept);
             this.Controls.Add(this.total);
             this.Controls.Add(this.desc);
-            this.Controls.Add(this.direccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -193,7 +179,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.fact);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.idFactura);
             this.Name = "Factura";
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);
@@ -203,8 +188,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label idFactura;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label fact;
         private System.Windows.Forms.Label label2;
@@ -212,10 +195,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label direccion;
         private System.Windows.Forms.Label desc;
         private System.Windows.Forms.Label total;
         private System.Windows.Forms.Button acept;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CadmusCursosOnline.Controlador;
+using CadmusCursosOnline.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,24 +14,21 @@ namespace CadmusCursosOnline
 {
     public partial class ListaCursosImpartidos : Form
     {
-        MateriasImpartidas m = new MateriasImpartidas();
+
+        MiembroEnt miembro = new MiembroEnt();
+        CursoEnt curso = new CursoEnt();
+        MateriasImpartidas m;
         principalPage page;
-        public int idM = 0;
-        public int idC = 0;
-        public ListaCursosImpartidos()
+        public ListaCursosImpartidos(int idMiembro)
         {
             InitializeComponent();
-            
-        }
-
-        public void ponerId(int id)
-        {
-            idM = id;
+            miembro.IdMiembro = idMiembro;
+           m = new MateriasImpartidas();
+            m.CargarMaterias(cursosImpartidos, miembro.IdMiembro);
         }
 
         private void volver_Click(object sender, EventArgs e)
         {
-
             this.Dispose();
             page.Show();
         }
@@ -48,16 +46,26 @@ namespace CadmusCursosOnline
             this.Hide();
         }
 
-        private void ListaCursosImpartidos_Load(object sender, EventArgs e)
-        {
-            m.cargarEst(cursosImpartidos, idM);
-            
-        }
 
         private void cursosImpartidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            m.cargarNot(Int32.Parse(cursosImpartidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()),estudianteCurso);
+           // m.cargarNot(Int32.Parse(cursosImpartidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()),estudianteCurso);
+        }
+
+        private void cursosImpartidos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                curso.IdCurso = Convert.ToInt32(cursosImpartidos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                m.cargarNot(curso.IdCurso, estudianteCurso);
+
+                
+            }
+            catch (Exception)
+            {
+               
+             }
         }
     }
 }

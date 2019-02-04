@@ -10,17 +10,19 @@ namespace CadmusCursosOnline.Controlador
 {
     class MateriasImpartidas
     {
-        public void cargarEst(DataGridView tabla, int idM)
+        public String CargarMaterias(DataGridView tabla, int idM)
         {
-            string cadena = "SELECT * FROM Curso, Imparte WHERE Curso.idCurso = Imparte.idCurso AND idMiembro = "+idM+"";
+            string cadena = "EXEC CursoImparteMiembro " + idM;
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();
             cmd.CommandText = cadena;
             cmd.ExecuteNonQuery();
+            SqlDataReader leer = cmd.ExecuteReader();
+            String idCurso= "";
             try
             {
-                SqlDataReader leer = cmd.ExecuteReader();
+                
                 while (leer.Read())
                 {
                     tabla.Rows.Add(leer["idCurso"].ToString(), leer["Nombre"].ToString(), leer["HORAS"].ToString(), leer["Costo"].ToString());
@@ -31,12 +33,14 @@ namespace CadmusCursosOnline.Controlador
             {
                 MessageBox.Show(e.Message);
             }
+          
             conection.CerrarConexion();
+            return idCurso;
         }
 
         public void cargarNot(int idC, DataGridView tabla)
         {
-            string cadena = "SELECT Nombre, Apellido, Nota FROM Miembro, Toma WHERE Miembro.idMiembro = Toma.idMiembro AND idCurso = " + idC + "";
+            string cadena = "EXEC miembroTomaCurso @idCur = " + idC;
             SqlCommand cmd = new SqlCommand();
             Conexion conection = new Conexion();
             cmd.Connection = conection.IniciarConexion();

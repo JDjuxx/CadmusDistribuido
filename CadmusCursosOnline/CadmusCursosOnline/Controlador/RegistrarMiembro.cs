@@ -17,6 +17,7 @@ namespace CadmusCursosOnline.Controlador
             cmd.Connection = conexion.IniciarConexion();
             cmd.CommandText = INSERT;
             cmd.ExecuteNonQuery();
+            conexion.CerrarConexion();
                  
         }
 
